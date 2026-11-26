@@ -1,0 +1,9 @@
+# Shared Blossom proxy route for aureka.space.
+# Installed as /srv/proxy/caddy/data/config/sites-enabled/aureka-space.caddy
+#
+# Temporary: until the plans are ready, aureka.space redirects to its product page on aureka.at.
+# Deliberately 302 (temporary), not 301: browsers cache a 301 indefinitely,
+# so visitors would keep being sent to aureka.at after the real site launches.
+aureka.space, www.aureka.space {
+	redir https://aureka.at/products/space temporary
+}
